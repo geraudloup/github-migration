@@ -34,6 +34,7 @@ It is best to do this process when nobody is currently working. All in-progress 
     - `(cd <repo>.git; git reflog expire --expire=now --all && git gc --prune=now --aggressive)`. **NOTE** change `<repo>` to the target repository name.
     - `npm run checkSize`. This is how big the target repo will be
     - `npm run rewrite`. This will use the commit map created by BFG and write the new commit hashes to all downloaded pull requests, comments and commits. This can take a while depending on how many pull requests and comments you have. Each step has progress logging to help.
+1. Recreate milestones in <dest-repo> to set proper milestone when creating issues ! :)
 1. `cd <source-repo>.git`
 1. `git push <dest-repo> --mirror`. This will push all branches, tags and refs to the target destination
 1. `npm run createBranches`. This will create a branch for each PR on the target repository. This is the first step that pushes github artifacts to the destination repo
